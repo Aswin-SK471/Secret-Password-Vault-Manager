@@ -1,0 +1,12 @@
+USERS TABLE:
+  id | int | key=PRI
+  username | varchar | key=
+  master_password_hash | text | key=
+VAULT TABLE:
+  id | int | key=PRI
+  user_id | int | key=
+  site | varchar | key=
+  site_username | varchar | key=
+  encrypted_password | text | key=
+  notes | text | key=
+  created_at | timestamp | key=

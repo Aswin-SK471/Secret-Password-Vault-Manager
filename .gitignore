@@ -1,0 +1,75 @@
+# ----------------------------
+# Dependencies
+# ----------------------------
+node_modules/
+server/node_modules/
+password-manager/node_modules/
+
+# ----------------------------
+# Production builds
+# ----------------------------
+build/
+dist/
+password-manager/build/
+
+# ----------------------------
+# Environment variables
+# ----------------------------
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+server/.env
+password-manager/.env
+
+# ----------------------------
+# Logs
+# ----------------------------
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+*.log
+
+# ----------------------------
+# OS files
+# ----------------------------
+.DS_Store
+Thumbs.db
+
+# ----------------------------
+# Coverage / testing
+# ----------------------------
+coverage/
+
+# ----------------------------
+# IDE files
+# ----------------------------
+.vscode/
+.idea/
+
+# ----------------------------
+# Misc
+# ----------------------------
+.pnp
+.pnp.js
+.cache/
+
+# ----------------------------
+# Lock files (keep for consistent dependency resolution)
+# ----------------------------
+package-lock.json
+yarn.lock
+
+# ----------------------------
+# Media files (exclude personal images)
+# ----------------------------
+*.jpeg
+*.jpg
+*.png
+*.gif
+*.bmp
+*.svg
+*.ico
+*.heic
+*.heif

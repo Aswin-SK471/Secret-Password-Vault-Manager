@@ -1,0 +1,71 @@
+:root {
+--bg: #f5f7fb;
+--card: rgba(255,255,255,0.85);
+--text-primary: #111827;
+--text-secondary: #4b5563;
+--border: rgba(0,0,0,0.08);
+--input-bg: rgba(255,255,255,0.95);
+--sidebar-bg: #ffffff;
+}
+
+[data-theme="dark"] {
+--bg: #0b0f1a;
+--card: rgba(18,24,43,0.8);
+--text-primary: #e6e9f0;
+--text-secondary: #9aa4bf;
+--border: rgba(255,255,255,0.08);
+--input-bg: rgba(18,24,43,0.9);
+--sidebar-bg: #12182b;
+}
+
+body,
+.auth-card,
+.sidebar,
+.sidebar-item,
+input,
+select,
+button,
+label,
+span,
+p,
+h1,
+h2,
+h3 {
+color: var(--text-primary) !important;
+}
+
+.sidebar-item.active {
+background: linear-gradient(135deg,#6a5cff,#00d4ff) !important;
+color: #ffffff !important;
+}
+
+.sidebar-item.active * {
+color: #ffffff !important;
+}
+
+.auth-card {
+background: var(--card) !important;
+}
+
+input, select, textarea {
+background: var(--input-bg) !important;
+color: var(--text-primary) !important;
+border: 1px solid var(--border) !important;
+}
+
+::placeholder {
+color: var(--text-secondary) !important;
+}
+
+select option {
+background: var(--card);
+color: var(--text-primary);
+}
+
+button {
+color: inherit;
+}
+
+* {
+  transition: background .2s ease, color .2s ease;
+}

@@ -1,0 +1,222 @@
+/* Modern Password Manager Styles */
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.light {
+  background-color: #f5f5f5;
+  color: #333333;
+}
+
+body.dark {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+/* Keyframe animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes loginCardEntrance {
+  from {
+    opacity: 0;
+    transform: translateY(30px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes floatingGradient {
+  0%, 100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(10px, 10px);
+  }
+}
+
+@keyframes buttonGlow {
+  0%, 100% {
+    box-shadow: 0 0 8px rgba(0, 212, 255, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 16px rgba(0, 212, 255, 0.6);
+  }
+}
+
+@keyframes popIn {
+  0% {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  70% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Ripple effect */
+.ripple {
+  position: relative;
+  overflow: hidden;
+}
+
+.ripple::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s ease, height 0.6s ease;
+}
+
+.ripple.active::after {
+  width: 300px;
+  height: 300px;
+}
+
+/* Card animations */
+.card {
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), 
+              box-shadow 0.3s ease,
+              border-color 0.3s ease;
+  animation: fadeIn 0.5s ease-out;
+  border-radius: 12px;
+}
+
+.card:hover {
+  transform: translateY(-6px) scale(1.01);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
+}
+
+.card:active {
+  transform: translateY(-3px) scale(0.99);
+}
+
+/* Button animations */
+button {
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  position: relative;
+}
+
+.primary-button,
+.secondary-button {
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+}
+
+.primary-button:hover,
+.secondary-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(0, 212, 255, 0.3);
+}
+
+.primary-button:active,
+.secondary-button:active {
+  transform: translateY(0) scale(0.98);
+}
+
+.button-hover {
+  background-color: #0056b3;
+}
+
+/* Mini button animations */
+.miniButton {
+  transition: all 0.2s ease;
+}
+
+.miniButton:hover {
+  transform: translateY(-1px) scale(1.02);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.miniButton:active {
+  transform: translateY(0) scale(0.98);
+}
+
+/* Input animations */
+input.input,
+select.input {
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+}
+
+input.input:focus,
+select.input:focus {
+  animation: popIn 0.3s ease;
+}
+
+/* Auth card entrance */
+.auth-card {
+  animation: loginCardEntrance 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Page fade transitions */
+.app {
+  animation: fadeIn 0.4s ease-out;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 0;
+    padding: 0;
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+  .sidebar.open {
+    width: 250px;
+    padding: 20px;
+    animation: slideInLeft 0.4s ease-out;
+  }
+  .hamburger {
+    display: block;
+  }
+  .overlay {
+    display: none;
+    transition: opacity 0.3s ease;
+  }
+  .overlay.show {
+    display: block;
+    animation: fadeIn 0.3s ease-out;
+  }
+}
